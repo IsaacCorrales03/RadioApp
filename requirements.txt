@@ -1,0 +1,8 @@
+flet
+sounddevice
+soundfile
+ffmpeg-python
+yt-dlp
+sqlalchemy
+mutagen
+python-dotenv
