@@ -1,4 +1,5 @@
 from datetime import datetime
+from src.core.Config import Config
 from pathlib import Path
 
 class Logger:
@@ -7,12 +8,12 @@ class Logger:
         pass
 
     @classmethod
-    def _timestamp(cls) -> str:
-        return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    def _now(cls):
+        return datetime.now().strftime(Config.DATE_FORMAT)
     
     @classmethod
     def write(cls, text: str, alsoInConsole: bool = False):
-        line = f"{cls._timestamp()} | {text}\n"
+        line = f"{cls._now()} | {text}\n"
 
         cls.LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
 
