@@ -23,8 +23,13 @@ def main(page: ft.Page):
         alignment=ft.MainAxisAlignment.START,
         spacing=panel_spacing,
     )
+    from src.audio.MusicLoader import MusicLoader
 
+    loader = MusicLoader("dardos.mp3")
+    metadata = loader.getMetadata()
+    print(metadata)
     page.add(row)
+    player_panel.updateMetadata(metadata)
 
 
 if __name__ == "__main__":

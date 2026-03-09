@@ -1,5 +1,5 @@
-from src.core.Logger import Logger
+from src.audio.MusicLoader import MusicLoader
 
-Logger.info("Radio server started", True)
-Logger.warn("Buffer almost full")
-Logger.error("Stream crashed", True)
+loader = MusicLoader("dardos.mp3")
+metadata = loader.getMetadata()
+print(metadata)
